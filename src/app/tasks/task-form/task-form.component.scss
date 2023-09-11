@@ -1,0 +1,156 @@
+@import "../../../styles.scss";
+
+$form-width: 600px;
+@mixin placeholder {
+  &::placeholder {
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+}
+
+.container {
+  position: relative;
+  top: 200px;
+  left: calc((100% - $form-width) / 2);
+}
+
+form {
+  width: $form-width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  & .msg {
+    font-size: 20px;
+    font-family: $font-roboto-light;
+    font-weight: 600;
+
+    &.sucess {
+      color: black;
+    }
+
+    &.fail {
+      color: rgb(255, 0, 0);
+    }
+  }
+}
+
+input {
+  @include placeholder;
+
+  border-radius: 10px;
+  text-align: center;
+  font-family: $font-roboto-light;
+  outline: 0;
+  border: 0;
+  padding: 8px;
+  font-size: 16px;
+  width: 50%;
+  font-weight: 600;
+
+  &.feature_flag {
+    width: 70%;
+  }
+}
+
+textarea {
+  @include placeholder;
+
+  padding: 10px;
+  border-radius: 10px;
+  outline: 0;
+  border: 0;
+  text-align: center;
+  font-family: $font-roboto-light;
+  font-size: 16px;
+  width: 90%;
+  resize: none;
+}
+
+button {
+  @include green-button;
+
+  border: 0;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+
+textarea,
+input {
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+}
+
+.switch_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+
+  & :nth-child(1) {
+    font-family: $font-roboto-light;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  & :nth-child(2) {
+    position: relative;
+    min-width: 60px;
+    min-height: 30px;
+
+    & .checkbox {
+      opacity: 0;
+
+      &:checked {
+        & + .slider:before {
+          transform: translateX(25px);
+        }
+        & + .slider {
+          background-color: rgb(0, 170, 200);
+        }
+      }
+    }
+
+    & .slider {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgb(220, 220, 220);
+      border-radius: 30px;
+      &:before {
+        position: absolute;
+        content: "";
+        width: 25px;
+        height: 24px;
+        top: 3px;
+        left: 5px;
+        border-radius: 50%;
+        background-color: white;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+.required_field_wrapper {
+  width: 100%;
+  text-align: center;
+
+  & textarea {
+    margin-left: 10px;
+  }
+
+  & span {
+    color: red;
+    vertical-align: top;
+    font-size: 20px;
+    margin-left: 3px;
+  }
+}
