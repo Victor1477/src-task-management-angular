@@ -1,7 +1,5 @@
 @import "../../styles.scss";
 
-$table-width: 1024px;
-
 .container {
   display: flex;
   flex-direction: column;
@@ -31,7 +29,8 @@ input {
 
 table {
   color: black;
-  width: $table-width;
+  min-width: 1024px;
+  width: 80%;
   font-family: $font-roboto-light;
   border-collapse: collapse;
   margin-bottom: 200px;
