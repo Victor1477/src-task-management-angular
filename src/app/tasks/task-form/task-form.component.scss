@@ -10,7 +10,9 @@ $form-width: 600px;
 
 .container {
   position: relative;
-  top: 200px;
+  display: flex;
+  align-items: center;
+  height: 90vh;
   left: calc((100% - $form-width) / 2);
 }
 
