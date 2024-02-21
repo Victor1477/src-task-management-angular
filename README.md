@@ -1,3 +1,3 @@
 # Ambiente
 
-Usar node 19.9.0
+Usar node 18.19.0
