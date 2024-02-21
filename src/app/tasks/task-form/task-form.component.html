@@ -1,0 +1,59 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (click)="message = ''">
+    <div class="required_field_wrapper">
+      <input
+        formControlName="code"
+        type="text"
+        name="code"
+        placeholder="Code"
+      /><span>*</span>
+    </div>
+    <input
+      formControlName="featureFlagName"
+      class="feature_flag"
+      type="text"
+      name="featureFlagName"
+      placeholder="FeatureFlag Name"
+    />
+    <div class="required_field_wrapper">
+      <textarea
+        formControlName="description"
+        type="text"
+        name="description"
+        placeholder="Description"
+        rows="3"
+        spellcheck="false"
+      ></textarea
+      ><span>*</span>
+    </div>
+    <textarea
+      formControlName="notes"
+      rows="5"
+      name="notes"
+      placeholder="Notes"
+      spellcheck="false"
+    ></textarea>
+    <div class="switch_wrapper">
+      <label>Active</label>
+      <label>
+        <input
+          formControlName="isActive"
+          class="checkbox"
+          type="checkbox"
+          name="isActive"
+        />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <button class="green" type="submit" [disabled]="form.invalid">
+      <app-spinner *ngIf="isLoading"></app-spinner>
+      <span *ngIf="!isLoading">Save</span>
+    </button>
+    <span
+      class="msg"
+      *ngIf="message"
+      [class]="{ fail: !this.saved, sucess: this.saved }"
+      >{{ message }}</span
+    >
+  </form>
+</div>

@@ -1,0 +1,63 @@
+@import "../../styles.scss";
+
+.background {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $default-background-color;
+  opacity: 0.95;
+}
+
+.content {
+  position: fixed;
+  top: 80px;
+  left: calc((100% - 450px) / 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px black;
+  height: 600px;
+  width: 450px;
+  gap: 20px;
+  background-color: $default-background-color;
+  border-radius: 20px;
+  animation: load 500ms linear 1;
+  text-align: center;
+  z-index: 1;
+  text-overflow: clip;
+  font-family: $font-roboto-light;
+}
+
+.sub_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+h3 {
+  width: 90%;
+  margin: 5px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  margin: 5px;
+  font-weight: 600;
+}
+
+@keyframes load {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
