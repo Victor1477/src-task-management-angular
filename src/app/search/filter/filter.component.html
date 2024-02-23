@@ -1,6 +1,6 @@
 <div class="container">
   <span>Filter by</span>
-  <form [formGroup]="inputForm" class="menu">
+  <form [formGroup]="inputForm" class="menu" (input)="onChange()">
     <div class="input-container">
       <input
         formControlName="searchFilter"

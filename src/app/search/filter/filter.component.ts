@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,10 +6,16 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
 })
-export class FilterComponent implements OnInit {
+export class FilterComponent {
+  @Output() filterValue = new EventEmitter<string>();
+
   inputForm: FormGroup = new FormGroup({
     searchFilter: new FormControl('code'),
   });
 
-  ngOnInit() {}
+  onChange() {
+    setTimeout(() => {
+      this.filterValue.emit(this.inputForm.value.searchFilter);
+    }, 10);
+  }
 }
