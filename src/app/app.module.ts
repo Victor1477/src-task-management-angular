@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { DetailTabComponent } from './detail-tab/detail-tab.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { AttachmentsTab } from './attachments-tab/attachments-tab.component';
+import { FilterComponent } from './search/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AttachmentsTab } from './attachments-tab/attachments-tab.component';
     TaskFormComponent,
     DetailTabComponent,
     SpinnerComponent,
-    AttachmentsTab
+    AttachmentsTab,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

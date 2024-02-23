@@ -1,9 +1,12 @@
 <div class="container">
-  <input
-    placeholder="Search"
-    [(ngModel)]="searchInput"
-    (input)="filterBySearchInput()"
-  />
+  <div class="search-container">
+    <input
+      placeholder="Search"
+      [(ngModel)]="searchInput"
+      (input)="filterBySearchInput()"
+    />
+    <app-filter></app-filter>
+  </div>
   <table>
     <thead>
       <th>Code</th>
