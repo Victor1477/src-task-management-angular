@@ -56,30 +56,33 @@ export class TasksComponent implements OnInit, OnDestroy {
     } else {
       this.tasks = this.tempTasks;
     }
-    this.tasks = this.tempTasks.filter((task) => {
-      switch (this.searchFilterValue) {
-        case 'code': {
-          return task.code
-            .toLowerCase()
-            .includes(this.searchInput.toLowerCase());
+
+    if (this.searchInput) {
+      this.tasks = this.tempTasks.filter((task) => {
+        switch (this.searchFilterValue) {
+          case 'code': {
+            return task.code
+              .toLowerCase()
+              .includes(this.searchInput.toLowerCase());
+          }
+          case 'description': {
+            return task.description
+              .toLowerCase()
+              .includes(this.searchInput.toLowerCase());
+          }
+          case 'featureFlag': {
+            return task.featureFlagName
+              .toLowerCase()
+              .includes(this.searchInput.toLowerCase());
+          }
+          case 'notes': {
+            return task.notes
+              .toLowerCase()
+              .includes(this.searchInput.toLowerCase());
+          }
         }
-        case 'description': {
-          return task.description
-            .toLowerCase()
-            .includes(this.searchInput.toLowerCase());
-        }
-        case 'featureFlag': {
-          return task.featureFlagName
-            .toLowerCase()
-            .includes(this.searchInput.toLowerCase());
-        }
-        case 'notes': {
-          return task.notes
-            .toLowerCase()
-            .includes(this.searchInput.toLowerCase());
-        }
-      }
-    });
+      });
+    }
   }
 
   onChangeSearchFilterValue(value: string) {
