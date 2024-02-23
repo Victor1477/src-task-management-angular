@@ -61,28 +61,24 @@ export class TasksComponent implements OnInit, OnDestroy {
       this.tasks = this.tempTasks.filter((task) => {
         switch (this.searchFilterValue) {
           case 'code': {
-            return task.code
-              .toLowerCase()
-              .includes(this.searchInput.toLowerCase());
+            return this.searchInputIncludes(task.code);
           }
           case 'description': {
-            return task.description
-              .toLowerCase()
-              .includes(this.searchInput.toLowerCase());
+            return this.searchInputIncludes(task.description);
           }
           case 'featureFlag': {
-            return task.featureFlagName
-              .toLowerCase()
-              .includes(this.searchInput.toLowerCase());
+            return this.searchInputIncludes(task.featureFlagName);
           }
           case 'notes': {
-            return task.notes
-              .toLowerCase()
-              .includes(this.searchInput.toLowerCase());
+            return this.searchInputIncludes(task.notes);
           }
         }
       });
     }
+  }
+
+  searchInputIncludes(value: string): boolean {
+    return value.toLowerCase().includes(this.searchInput.toLowerCase());
   }
 
   onChangeSearchFilterValue(value: string) {
@@ -104,17 +100,15 @@ export class TasksComponent implements OnInit, OnDestroy {
   }
 
   onDelete(id: number) {
-    this.findSelectedTask(id).then((result) => {
-      if (result) {
-        if (
-          confirm(
-            `${enUs.tasks.aboutToDelete} ${this.selectedTask.code}`
-          ).valueOf()
-        ) {
-          this.tasksService.deleteTask(id).then((result) => {
-            this.store.dispatch(loadStore());
-          });
-        }
+    this.findSelectedTask(id).then(() => {
+      if (
+        confirm(
+          `${enUs.tasks.aboutToDelete} ${this.selectedTask.code}`
+        ).valueOf()
+      ) {
+        this.tasksService.deleteTask(id).then((result) => {
+          this.store.dispatch(loadStore());
+        });
       }
     });
   }
