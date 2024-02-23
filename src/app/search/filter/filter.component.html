@@ -1,21 +1,41 @@
 <div class="container">
   <span>Filter by</span>
-  <div class="menu">
+  <form [formGroup]="inputForm" class="menu">
     <div class="input-container">
-      <input type="radio" name="search-filter" id="code" />
+      <input
+        formControlName="searchFilter"
+        type="radio"
+        id="code"
+        value="code"
+      />
       <label for="code">Code</label>
     </div>
     <div class="input-container">
-      <input type="radio" name="search-filter" id="description" />
+      <input
+        formControlName="searchFilter"
+        type="radio"
+        id="description"
+        value="description"
+      />
       <label for="description">Description</label>
     </div>
     <div class="input-container">
-      <input type="radio" name="search-filter" id="flag" />
+      <input
+        formControlName="searchFilter"
+        type="radio"
+        id="flag"
+        value="featureFlag"
+      />
       <label for="flag">Feature Flag</label>
     </div>
     <div class="input-container">
-      <input type="radio" name="search-filter" id="notes" />
+      <input
+        formControlName="searchFilter"
+        type="radio"
+        id="notes"
+        value="notes"
+      />
       <label for="notes">Notes</label>
     </div>
-  </div>
+  </form>
 </div>
