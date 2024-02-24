@@ -74,6 +74,8 @@ export class TasksComponent implements OnInit, OnDestroy {
           }
         }
       });
+    } else {
+      this.tempTasks = [];
     }
   }
 
