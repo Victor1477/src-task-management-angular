@@ -26,15 +26,14 @@ export class AttachmentsTab implements OnInit {
         headers: { taskId: this.taskId },
       })
       .then((result) => {
-        let tempAttachments = [];
+        this.attachments = [];
         result.data.forEach((element) => {
           let attachment = {
             ...element,
             url: `${env.apiUrl}/attachments/${element.id}/${element.fileName}`,
           };
-          tempAttachments.push(attachment);
+          this.attachments.push(attachment);
         });
-        this.attachments = tempAttachments;
       })
       .catch(() => {
         this.erro = true;
