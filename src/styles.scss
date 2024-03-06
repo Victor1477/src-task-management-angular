@@ -1,6 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto-Light.ttf") format("truetype");
+}
 
-$font-roboto-light: "Roboto", sans-serif;
+$font-roboto-light: "Roboto";
 $default-background-color: rgb(180, 180, 180);
 
 body {
