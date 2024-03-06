@@ -40,16 +40,19 @@ ul {
 li {
   display: grid;
   grid-template-columns: 70% 20% 10%;
-  padding: 5px 0 5px 0;
   align-items: center;
 
   & a {
+    padding: 5px 0;
+    max-width: fit-content;
+    justify-self: center;
     text-decoration: none;
     font-family: $font-roboto-light;
     font-weight: 600;
     color: black;
     &:hover {
-      color: mediumblue;
+      color: white;
+      text-shadow: 1px 1px 2px black;
     }
   }
 }
@@ -80,13 +83,17 @@ li {
 .delete-button {
   border: 0;
   background-color: transparent;
+  text-shadow: 1px 1px 2px black;
+  padding: 5px 0;
   color: red;
-  font-size: 16px;
+  margin: 0;
+  font-size: 18px;
   font-weight: 900;
-  transition: font-size 200ms;
+  transition: all 200ms;
 
   &:hover {
-    font-size: 20px;
+    font-size: 26px;
+    padding: 0;
   }
 }
 
