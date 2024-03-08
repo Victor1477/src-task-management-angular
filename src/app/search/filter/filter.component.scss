@@ -16,7 +16,7 @@
     margin-top: 5px;
     flex-direction: column;
     position: absolute;
-    gap: 5px;
+    gap: 8px;
     background-color: $default-background-color;
     z-index: 1;
     width: fit-content;
@@ -31,5 +31,10 @@
     & .menu {
       display: flex;
     }
+  }
+
+  & label:hover {
+    color: white;
+    text-shadow: 1px 1px 2px black;
   }
 }
