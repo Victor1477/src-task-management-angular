@@ -33,8 +33,15 @@
     }
   }
 
-  & label:hover {
-    color: white;
-    text-shadow: 1px 1px 2px black;
+  & label {
+    display: inline-block;
+    width: 100%;
+  }
+
+  & .input-container:hover {
+    & label {
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
   }
 }
