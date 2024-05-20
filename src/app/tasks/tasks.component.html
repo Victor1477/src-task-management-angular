@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="search-container">
+    <input
+      placeholder="Search"
+      [(ngModel)]="searchInput"
+      (input)="filterBySearchInput()"
+    />
+    <app-filter (filterValue)="onChangeSearchFilterValue($event)"></app-filter>
+  </div>
+  <table>
+    <thead>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Created Date</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.code }}</td>
+        <td class="description">{{ task.description }}</td>
+        <td>{{ task.createdDate | date }}</td>
+        <td>
+          <div class="buttons">
+            <button class="green action-button" (click)="onUpdate(task.id)">
+              Update
+            </button>
+            <button class="green action-button" (click)="onDetails(task.id)">
+              Details
+            </button>
+            <button
+              class="green action-button"
+              (click)="onAttachments(task.id)"
+            >
+              Attachments
+            </button>
+            <button class="delete-button" (click)="onDelete(task.id)">X</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-detail-tab
+  *ngIf="showDetailTab"
+  [task]="selectedTask"
+  (close)="onDetails()"
+></app-detail-tab>
+<app-attachments-tab
+  *ngIf="showAttachmentsTab"
+  [taskId]="selectedTask.id"
+  (close)="onAttachments()"
+></app-attachments-tab>

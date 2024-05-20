@@ -1,0 +1,58 @@
+@import "../../styles.scss";
+
+$background-color: rgb(60, 60, 60);
+$links-background-color: rgb(80, 80, 80);
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: $background-color;
+  padding: 5px;
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+a {
+  cursor: pointer;
+  font-size: 20px;
+  font-family: $font-roboto-light;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  padding: 10px 50px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.down_arrow {
+  width: 14px;
+  margin-left: 5px;
+}
+
+a:hover {
+  background-color: $links-background-color;
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 10px;
+  margin: 10px;
+  padding: 20px 0;
+  border-radius: 5px;
+  background-color: $background-color;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}

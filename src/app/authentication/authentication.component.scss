@@ -1,0 +1,92 @@
+.login-form-container {
+  font-family: Roboto;
+  font-weight: 700;
+  position: fixed;
+  background: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(220, 220, 220);
+
+  form {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-group {
+      position: relative;
+      border: 1px solid black;
+      width: 12rem;
+      border-radius: 4px;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+
+      label {
+        transition: all 100ms linear;
+        z-index: 100;
+      }
+      input {
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        position: absolute;
+        background-color: inherit;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+      }
+
+      &.open > label {
+        position: absolute;
+        transform: translate(-0.4rem, -0.7rem);
+      }
+
+      &.open > input {
+        position: relative;
+        top: 0.7rem;
+        opacity: 1;
+        width: 10rem;
+      }
+    }
+
+    .credentials-error {
+      color: red;
+    }
+
+    .submit-button {
+      border: 0;
+      width: 100%;
+      min-height: 2.5rem;
+      display: flex;
+      justify-content: center;
+      font-weight: inherit;
+      font-size: 1rem;
+      padding: 0.5rem;
+      color: white;
+      border-radius: 10px;
+      transition: all 50ms linear;
+      background: linear-gradient(
+        90deg,
+        rgb(100, 255, 100),
+        rgb(50, 50, 50) 33% 66%,
+        rgb(100, 255, 100)
+      );
+    }
+
+    .submit-button:hover {
+      font-size: 1.1rem;
+      padding: 0.4rem;
+      background: linear-gradient(
+        90deg,
+        rgb(0, 255, 0),
+        rgb(50, 50, 50) 33% 66%,
+        rgb(0, 255, 0)
+      );
+    }
+  }
+}

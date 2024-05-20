@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto-Light.ttf") format("truetype");
+}
+
+$font-roboto-light: "Roboto";
+$default-background-color: rgb(180, 180, 180);
+
+body {
+  margin: 0;
+  background-color: $default-background-color;
+  overflow-x: hidden;
+}
+
+@mixin green-button {
+  &.green {
+    background-color: rgb(0, 200, 170);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    &:hover:not(:disabled) {
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+  }
+}

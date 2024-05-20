@@ -1,0 +1,41 @@
+<div class="container">
+  <span>Filter search by</span>
+  <form [formGroup]="inputForm" class="menu" (input)="onChange()">
+    <div class="input-container">
+      <input
+        formControlName="searchFilter"
+        type="radio"
+        id="code"
+        value="code"
+      />
+      <label for="code">Code</label>
+    </div>
+    <div class="input-container">
+      <input
+        formControlName="searchFilter"
+        type="radio"
+        id="description"
+        value="description"
+      />
+      <label for="description">Description</label>
+    </div>
+    <div class="input-container">
+      <input
+        formControlName="searchFilter"
+        type="radio"
+        id="flag"
+        value="featureFlag"
+      />
+      <label for="flag">Feature Flag</label>
+    </div>
+    <div class="input-container">
+      <input
+        formControlName="searchFilter"
+        type="radio"
+        id="notes"
+        value="notes"
+      />
+      <label for="notes">Notes</label>
+    </div>
+  </form>
+</div>

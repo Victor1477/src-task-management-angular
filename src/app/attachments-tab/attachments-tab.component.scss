@@ -1,0 +1,135 @@
+@import "../../styles.scss";
+
+.background {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $default-background-color;
+  opacity: 0.95;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 80px;
+  left: calc((100% - 450px) / 2);
+  display: flex;
+  box-shadow: 0 0 10px black;
+  height: 600px;
+  width: 450px;
+  background-color: $default-background-color;
+  border-radius: 20px;
+  animation: load 500ms linear 1;
+  text-align: center;
+  z-index: 1;
+  font-family: $font-roboto-light;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 80%;
+  overflow-y: auto;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 70% 20% 10%;
+  align-items: center;
+
+  & a {
+    padding: 5px 0;
+    max-width: fit-content;
+    justify-self: center;
+    text-decoration: none;
+    font-family: $font-roboto-light;
+    font-weight: 600;
+    color: black;
+    &:hover {
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+  }
+}
+
+.upload-button {
+  @include green-button;
+  position: relative;
+  text-align: center;
+  height: fit-content;
+  font-family: $font-roboto-light;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 5px;
+  margin: 10px;
+  width: 80%;
+  border: 0;
+  border-radius: 5px;
+  & .upload {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.delete-button {
+  border: 0;
+  background-color: transparent;
+  text-shadow: 1px 1px 2px black;
+  padding: 5px 0;
+  color: red;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  transition: all 200ms;
+
+  &:hover {
+    font-size: 26px;
+    padding: 0;
+  }
+}
+
+@keyframes load {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+span {
+  font-size: 18px;
+  font-weight: 600;
+  &.erro {
+    color: red;
+  }
+}
+
+.spinner {
+  position: relative;
+  top: 40%;
+  width: 50px;
+  height: 50px;
+  border-top: 5px solid rgb(0, 255, 170);
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+  justify-self: center;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
