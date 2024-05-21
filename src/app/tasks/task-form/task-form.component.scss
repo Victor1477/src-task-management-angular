@@ -10,16 +10,16 @@ $form-width: 600px;
 }
 
 .container {
-  position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 90vh;
-  left: calc((100% - $form-width) / 2);
 }
 
 form {
   width: $form-width;
   display: flex;
+  margin: 2rem 0;
   flex-direction: column;
   align-items: center;
   gap: 20px;
@@ -141,6 +141,7 @@ button {
 
 .required_field_wrapper {
   width: 100%;
+  text-wrap: nowrap;
   text-align: center;
 
   & textarea {
@@ -152,5 +153,11 @@ button {
     vertical-align: top;
     font-size: 20px;
     margin-left: 3px;
+  }
+}
+
+@media (max-width: 40rem) {
+  form {
+    width: 95%;
   }
 }

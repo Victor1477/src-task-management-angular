@@ -8,6 +8,7 @@ $default-background-color: rgb(180, 180, 180);
 
 body {
   margin: 0;
+  min-width: 320px;
   background-color: $default-background-color;
   overflow-x: hidden;
 }
