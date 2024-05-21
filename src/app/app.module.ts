@@ -15,8 +15,9 @@ import { HeaderComponent } from './header/header.component';
 import { DetailTabComponent } from './detail-tab/detail-tab.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { AttachmentsTab } from './attachments-tab/attachments-tab.component';
-import { FilterComponent } from './search/filter/filter.component';
+import { FilterComponent } from './components/search/filter/filter.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { ActionButtons } from './components/action-buttons/action-buttons.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     AttachmentsTab,
     FilterComponent,
     AuthenticationComponent,
+    ActionButtons,
   ],
   imports: [
     BrowserModule,
