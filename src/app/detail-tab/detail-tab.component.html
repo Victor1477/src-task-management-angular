@@ -1,16 +1,18 @@
 <div class="background" (click)="onClose()"></div>
-<div class="content">
-  <h2>{{ task.code }}</h2>
-  <div *ngIf="task.featureFlagName" class="sub_content">
-    <h3>FeatureFlag:</h3>
-    <p>{{ task.featureFlagName }}</p>
-  </div>
-  <div class="sub_content">
-    <h3>Description:</h3>
-    <p>{{ task.description }}</p>
-  </div>
-  <div *ngIf="task.notes" class="sub_content">
-    <h3>Notes:</h3>
-    <p>{{ task.notes }}</p>
+<div class="content-container">
+  <div class="content">
+    <h2>{{ task.code }}</h2>
+    <div *ngIf="task.featureFlagName" class="sub_content">
+      <h3>FeatureFlag:</h3>
+      <p>{{ task.featureFlagName }}</p>
+    </div>
+    <div class="sub_content">
+      <h3>Description:</h3>
+      <p>{{ task.description }}</p>
+    </div>
+    <div *ngIf="task.notes" class="sub_content">
+      <h3>Notes:</h3>
+      <p>{{ task.notes }}</p>
+    </div>
   </div>
 </div>
