@@ -7,29 +7,44 @@
     />
     <app-filter (filterValue)="onChangeSearchFilterValue($event)"></app-filter>
   </div>
-  <table>
-    <thead>
-      <th>Code</th>
-      <th>Description</th>
-      <th>Created Date</th>
-      <th>Actions</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let task of tasks">
-        <td>{{ task.code }}</td>
-        <td class="description">{{ task.description }}</td>
-        <td>{{ task.createdDate | date }}</td>
-        <td>
-          <action-buttons
-            (update)="onUpdate(task.id)"
-            (details)="onDetails(task.id)"
-            (attachments)="onAttachments(task.id)"
-            (delete)="onDelete(task.id)"
-          ></action-buttons>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-container">
+    <table>
+      <thead>
+        <th>Code</th>
+        <th>Description</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.code }}</td>
+          <td class="description">{{ task.description }}</td>
+          <td>{{ task.createdDate | date }}</td>
+          <td>
+            <action-buttons
+              (update)="onUpdate(task.id)"
+              (details)="onDetails(task.id)"
+              (attachments)="onAttachments(task.id)"
+              (delete)="onDelete(task.id)"
+            ></action-buttons>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ol class="mobile-list">
+    <li *ngFor="let task of tasks" class="task-item">
+      <h2>{{ task.code }}</h2>
+      <h3>{{ task.description }}</h3>
+      <p>{{ task.createdDate | date }}</p>
+      <action-buttons
+        (update)="onUpdate(task.id)"
+        (details)="onDetails(task.id)"
+        (attachments)="onAttachments(task.id)"
+        (delete)="onDelete(task.id)"
+      ></action-buttons>
+    </li>
+  </ol>
 </div>
 <app-detail-tab
   *ngIf="showDetailTab"

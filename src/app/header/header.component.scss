@@ -56,3 +56,9 @@ a:hover {
 .dropdown:hover .dropdown-menu {
   display: flex;
 }
+
+@media (max-width: 30rem) {
+  a {
+    padding: 10px 35px;
+  }
+}
