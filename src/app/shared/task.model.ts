@@ -6,6 +6,7 @@ export class Task {
     public createdDate: Date,
     public featureFlagName: string,
     public notes: string,
+    public pendencies: string,
     public isActive: boolean = true
   ) {}
 }

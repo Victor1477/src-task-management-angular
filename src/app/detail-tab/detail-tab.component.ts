@@ -9,11 +9,15 @@ import { Task } from '../shared/task.model';
 export class DetailTabComponent implements OnInit {
   @Input() task: Task;
   notes: string;
+  pendencies: string;
   @Output() close = new EventEmitter();
 
   ngOnInit() {
     if (this.task.notes) {
       this.notes = this.task.notes.replaceAll('\n', '<br>');
+    }
+    if (this.task.pendencies) {
+      this.pendencies = this.task.pendencies.replaceAll('\n', '<br>');
     }
   }
 

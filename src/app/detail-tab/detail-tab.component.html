@@ -14,5 +14,9 @@
       <h3>Notes:</h3>
       <p [innerHTML]="notes"></p>
     </div>
+    <div *ngIf="task.pendencies" class="sub_content">
+      <h3>Pendencies:</h3>
+      <p [innerHTML]="pendencies"></p>
+    </div>
   </div>
 </div>

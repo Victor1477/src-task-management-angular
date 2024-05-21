@@ -22,6 +22,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
     code: '',
     description: '',
     notes: '',
+    pendencies: '',
     featureFlagName: '',
     isActive: true,
   };
@@ -50,6 +51,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
       code: new FormControl(this.task.code, Validators.required),
       description: new FormControl(this.task.description, Validators.required),
       notes: new FormControl(this.task.notes),
+      pendencies: new FormControl(this.task.pendencies),
       featureFlagName: new FormControl(this.task.featureFlagName),
       isActive: new FormControl(this.task.isActive),
     });
