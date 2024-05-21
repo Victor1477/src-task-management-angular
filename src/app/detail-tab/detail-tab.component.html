@@ -12,7 +12,7 @@
     </div>
     <div *ngIf="task.notes" class="sub_content">
       <h3>Notes:</h3>
-      <p>{{ task.notes }}</p>
+      <p [innerHTML]="notes"></p>
     </div>
   </div>
 </div>
