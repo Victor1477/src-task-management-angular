@@ -133,3 +133,11 @@ span {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 40rem) {
+  .content {
+    left: calc((100% - 96%) / 2);
+    top: 1rem;
+    width: 96%;
+  }
+}

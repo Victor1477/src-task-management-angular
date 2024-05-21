@@ -76,3 +76,11 @@
     }
   }
 }
+
+@media (max-width: 40rem) {
+  .content-container {
+    left: calc((100% - 96%) / 2);
+    top: 1rem;
+    width: 96%;
+  }
+}

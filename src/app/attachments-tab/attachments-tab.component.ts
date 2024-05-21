@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { env } from '../shared/env';
 import { tokenSelector } from '../store/store.selectors';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { disableBodyScroll, enableBodyScroll } from '../utils/dom-manipulation';
 
 @Component({
   selector: 'app-attachments-tab',
@@ -21,6 +22,7 @@ export class AttachmentsTab implements OnInit {
   constructor(private store: Store<{ token: string }>) {}
 
   ngOnInit() {
+    disableBodyScroll();
     this.loadAttachments();
   }
 
@@ -54,6 +56,7 @@ export class AttachmentsTab implements OnInit {
   }
 
   onClose() {
+    enableBodyScroll();
     this.close.emit();
   }
 
