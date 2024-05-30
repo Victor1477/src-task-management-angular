@@ -40,7 +40,7 @@ export class AttachmentsTab implements OnInit {
               result.data.forEach((element) => {
                 let attachment = {
                   ...element,
-                  url: `${env.apiUrl}/tasks/attachments/${element.id}/${element.fileName}`,
+                  url: `${env.apiUrl}/tasks/attachments/${element.id}/${element.fileName}?authorization=${state.token}`,
                 };
                 this.attachments.push(attachment);
               });

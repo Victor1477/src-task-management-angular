@@ -4,7 +4,7 @@
   <ul *ngIf="!isLoading">
     <li class="list-item" *ngFor="let attachment of attachments">
       <a target="_blank" [href]="attachment.url">{{ attachment.fileName }}</a>
-      <a target="_blank" [href]="attachment.url + '?w=download'">Download</a>
+      <a target="_blank" [href]="attachment.url + '&w=download'">Download</a>
       <button class="delete-button" (click)="onDelete(attachment)">X</button>
     </li>
   </ul>
