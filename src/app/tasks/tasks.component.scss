@@ -18,13 +18,14 @@ input {
   border: 0;
   outline: none;
   width: 256px;
-  font-weight: 600;
+  font-weight: normal;
   background-color: transparent;
   box-shadow: 0 0 5px black;
 
   &::placeholder {
     color: black;
     opacity: 90%;
+    font-weight: 600;
   }
 }
 
@@ -91,7 +92,7 @@ table {
       font-size: 16px;
       text-align: center;
       padding: 15px;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     & .description {

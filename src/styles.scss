@@ -1,6 +1,13 @@
 @font-face {
   font-family: "Roboto";
   src: url("./assets/Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
 $font-roboto-light: "Roboto";
