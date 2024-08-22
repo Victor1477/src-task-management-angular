@@ -71,7 +71,7 @@ export class AttachmentsTab implements OnInit {
     this.store.select(tokenSelector).subscribe((state: any) => {
       if (state) {
         axios
-          .post(env.apiUrl + '/tasks/attachments/upload', form, {
+          .post(env.apiUrl + '/tasks/attachments', form, {
             headers: { taskId: this.taskId, Authorization: state.token },
           })
           .then(() => {
@@ -93,8 +93,8 @@ export class AttachmentsTab implements OnInit {
       this.store.select(tokenSelector).subscribe((state: any) => {
         if (state) {
           axios
-            .delete(env.apiUrl + '/tasks/attachments', {
-              headers: { id: attachment.id, Authorization: state.token },
+            .delete(env.apiUrl + '/tasks/attachments/' + attachment.id, {
+              headers: { Authorization: state.token },
             })
             .then(() => {
               this.loadAttachments();
