@@ -14,8 +14,8 @@ export class TasksService {
         token = state.token;
       }
     });
-    return axios.delete(env.apiUrl + '/tasks', {
-      headers: { id: id, Authorization: token },
+    return axios.delete(env.apiUrl + '/tasks/' + id, {
+      headers: { Authorization: token },
     });
   }
 }

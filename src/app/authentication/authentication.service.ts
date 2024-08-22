@@ -8,8 +8,8 @@ import { loadToken } from '../store/store.actions';
 export class AuthenticationService {
   constructor(private store: Store<{ token: string }>) {}
 
-  login(user: { name: string; password: string }) {
-    return axios.post(env.apiUrl + '/authenticate', user).then((response) => {
+  login(user: { username: string; password: string }) {
+    return axios.post(env.apiUrl + '/users/login', user).then((response) => {
       this.store.dispatch(loadToken({ token: response.data }));
     });
   }

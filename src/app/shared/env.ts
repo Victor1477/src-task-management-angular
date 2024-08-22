@@ -1,3 +1,3 @@
 export const env = {
-  apiUrl: 'https://api.joaovictoroliveira.com/api',
+  apiUrl: 'http://localhost:9002',
 };

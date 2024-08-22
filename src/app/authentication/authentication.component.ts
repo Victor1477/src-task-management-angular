@@ -18,7 +18,7 @@ export class AuthenticationComponent {
   ) {}
 
   loginForm: FormGroup = new FormGroup({
-    name: new FormControl(''),
+    username: new FormControl(''),
     password: new FormControl(''),
   });
 
